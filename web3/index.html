@@ -1,0 +1,134 @@
+<!DOCTYPE>
+<html>
+  <head>
+		<meta charset='utf-8'>
+		<title>Canvas</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<!-- Bootstrap -->
+		<link href="C:\Bootstrap\node_modules\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+  	<div class="pull-left bg-success col-xs-3">
+	  	<div class="container select_figures">
+	  		<h3><b>Выбор фигуры:</b></h3>
+			<select class="pull-left" name="figures" id="select_object" onchange="selectObject()">
+		    	<option disabled selected>Выберите фигуру</option>
+			    <option value="circle">Круг</option>
+				<option value="rectangle">Прямоугольник</option>
+				<option value="triangle">Треугольник</option>
+			</select>
+		</div>
+
+		<div class="select_colors" id="color_block"> 
+			<h3 class="center-block">Выбор цвета:</h3>
+			<div class="row">
+				<span class="col-xs-6">Цвет заливки:</span>
+				<input type="color" name="FillColor" id="fill_color" value="#ffffff" onchange="changeFillColor(value)">
+			</div>
+			<br>
+			<div class="row">
+				<span class="col-xs-6">Цвет границы:</span>
+				<input type="color" name="BorderColor" id="border_color" value="#000000" onchange="changeBorderColor(value)">
+			</div>
+		</div>
+
+		<div class="pull-left select_coordinates" id="circle_block" >
+			<h3>Круг:</h3>
+			<div class="row">
+				<span class="col-xs-6"><b>Радиус:</b></span> 
+				<input class="field_for_digits" type="number" name="radius" value="50" size="4" onchange="changeCircleSettings(name, value)">
+			</div>
+			<br>
+			<p><b>Центр круга:</b></p>
+			<div class="row">
+				<div class="col-xs-6">
+					<span>X</span> 
+					<input class="field_for_digits" type="number" name="centerX" value="200" size="4" onchange="changeCircleSettings(name, value)">
+				</div >
+				<div class="col-xs-6">
+					<span>Y</span> 
+					<input class="field_for_digits" type="number" name="centerY" value="200" size="4" onchange="changeCircleSettings(name, value)">
+				</div>
+			</div>
+		</div>
+
+		<div class="pull-left select_coordinates" id="rectangle_block">
+			<h3>Прямоугольник:</h3>
+			<span class="row"><b>Левый верхний угол:</b></span>
+			<div class="row">
+				<div class="col-xs-6">
+					<span>X</span> 
+					<input class="field_for_digits" type="number" name="x1" value="200" onchange="changeRectangleSettings(name, value)">
+				</div>
+				<div class="col-xs-6">
+					<span>Y</span> 
+					<input class="field_for_digits" type="number" name="y1" value="200" onchange="changeRectangleSettings(name, value)">
+				</div>
+			</div>
+			<br>
+			<span class="row"><b>Правый нижний угол:</b></span>
+			<div class="row">
+				<div class="col-xs-6">
+					<span>X</span> 
+					<input class="field_for_digits" type="number" name="x2" value="300" onchange="changeRectangleSettings(name, value)">
+				</div>
+				<div class="col-xs-6">
+					<span>Y</span> 
+					<input class="field_for_digits" type="number" name="y2" value="300" onchange="changeRectangleSettings(name, value)">
+				</div>
+			</div>
+		</div>
+
+		<div class="pull-left select_coordinates" id="triangle_block">
+			<h3>Треугольник:</h3>
+			<br>
+			<span class="row"><b>Первая точка:</b></span>
+			<div class="row">
+				<div class="col-xs-6">
+					<span>X</span> 
+					<input class="field_for_digits" type="number" name="x1" value="200" onchange="changeTriangleSettings(name, value)">
+				</div>
+				<div class="col-xs-6">
+					<span>Y</span> 
+					<input class="field_for_digits" type="number" name="y1" value="200" onchange="changeTriangleSettings(name, value)">
+				</div>
+			</div>
+			<br>
+			<span class="row"><b>Вторая точка:</b></span>
+			<div class="row">
+				<div class="col-xs-6">
+					<span>X</span> 
+					<input class="field_for_digits" type="number" name="x2" value="300" onchange="changeTriangleSettings(name, value)">
+				</div>
+				<div class="col-xs-6">
+					<span>Y</span> 
+					<input class="field_for_digits" type="number" name="y2" value="300" onchange="changeTriangleSettings(name, value)">
+				</div>
+			</div>
+			<br>
+			<span class="row"><b>Третья точка:</b></span>
+			<div class="row">
+				<div class="col-xs-6">
+					<span>X</span> 
+					<input class="field_for_digits" type="number" name="x3" value="300" onchange="changeTriangleSettings(name, value)">
+				</div>
+				<div class="col-xs-6">
+					<span>Y</span> 
+					<input class="field_for_digits" type="number" name="y3" value="200" onchange="changeTriangleSettings(name, value)">
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <canvas class="pull-left" height='480' width='640' id="canvas"></canvas>
+	<script type="text/javascript" src="js/Shape.js"></script>
+	<script type="text/javascript" src="js/Circle.js"></script>
+	<script type="text/javascript" src="js/Rectangle.js"></script>
+	<script type="text/javascript" src="js/Triangle.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/SelectObject.js"></script>
+	
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script src="C:\Bootstrap\node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+  </body>
+</html>
