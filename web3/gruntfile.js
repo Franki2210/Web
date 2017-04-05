@@ -79,7 +79,7 @@ module.exports = function(grunt) {
 			task:
 			{
 				files: ['index.html'],
-				//tasks: ['default'],
+				tasks: ['default'],
 				options:
 				{
 					livereload: true
@@ -90,6 +90,16 @@ module.exports = function(grunt) {
 			{
 				files: ['js/*.*'],
 				tasks: ['concat', 'eslint', 'cacheBust'],
+				options: 
+				{
+					livereload: true
+				}
+			},
+			
+			css: 
+			{
+				files: ['css/*.*'],
+				tasks: ['default'],
 				options: 
 				{
 					livereload: true
@@ -141,16 +151,16 @@ module.exports = function(grunt) {
 	, 'cacheBust'		
 	, 'copy:index'
 	, 'open'		
-	, 'connect'	
-	, 'watch'	
+	, 'connect'		
+	, 'watch'
 	]);	
   
 	grunt.loadNpmTasks('grunt-contrib-copy');	
-  grunt.loadNpmTasks('grunt-cache-bust');     
+	grunt.loadNpmTasks('grunt-cache-bust');     
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-open');	
 	grunt.loadNpmTasks('grunt-contrib-connect');		
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-eslint');   	
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-eslint');   	
 };
