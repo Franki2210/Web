@@ -36,16 +36,7 @@ module.exports = function(grunt) {
     {
         target: ['js/built.js']
     },
-		
-		// connect: 
-		// {						
-			// meta: 
-			// {
-				// port: 2000,
-				// base: ''
-			// }
-		// },  
-		
+	
 		connect:
 		{
 			server:
